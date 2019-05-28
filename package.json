@@ -1,0 +1,41 @@
+{
+  "name": "loopback-search-mixin",
+  "version": "1.0.0",
+  "description": "A more search friendly search endpoint for loopback",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc -r lcov -r text -r html mocha -r should src/*.spec.js",
+    "lint": "eslint .",
+    "format": "prettier-eslint --write '*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danwakeem/loopback-search-mixin.git"
+  },
+  "keywords": [
+    "loopback",
+    "search",
+    "mixin"
+  ],
+  "author": "Danwakeem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danwakeem/loopback-search-mixin/issues"
+  },
+  "homepage": "https://github.com/Danwakeem/loopback-search-mixin#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "prettier": "^1.17.1",
+    "proxyquire": "^2.1.0",
+    "should": "^13.2.3",
+    "should-sinon": "0.0.6",
+    "sinon": "^7.3.2"
+  }
+}
