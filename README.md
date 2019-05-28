@@ -23,3 +23,15 @@ Then add the mix in to your `model.json` file
   "Search": true
 },
 ```
+
+## Options
+The default behavior of this mixin will set a limit of 10 and offset of 0.
+You can override these defaults through the mixin options
+```json
+"mixins": {
+  "Search": {
+    "offset": 100,
+    "limit": 20,
+  }
+},
+```
