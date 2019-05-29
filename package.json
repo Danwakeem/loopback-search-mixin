@@ -1,10 +1,10 @@
 {
   "name": "loopback-search-mixin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A more search friendly search endpoint for loopback",
   "main": "index.js",
   "scripts": {
-    "test": "nyc -r lcov -r text -r html mocha -r should src/*.spec.js",
+    "test": "nyc -r lcov -r text -r html mocha -r should *.spec.js",
     "lint": "eslint .",
     "format": "prettier-eslint --write '**/*.js'"
   },

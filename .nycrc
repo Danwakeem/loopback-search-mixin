@@ -1,6 +1,5 @@
 {
   "exclude": [
-    "coverage/**",
-    "index.js"
+    "coverage/**"
   ]
 }

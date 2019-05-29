@@ -1,7 +1,7 @@
 const sandbox = require("sinon").createSandbox();
-const index = require("./index");
+const Search = require("./Search");
 
-describe("index", () => {
+describe("Search", () => {
   let Model;
   beforeEach(() => {
     Model = {
@@ -16,14 +16,14 @@ describe("index", () => {
   afterEach(() => sandbox.restore());
 
   it("should disable default find endpoint", () => {
-    index(Model, {});
+    Search(Model, {});
 
     sandbox.assert.calledOnce(Model.disableRemoteMethodByName);
     sandbox.assert.calledWith(Model.disableRemoteMethodByName, "find");
   });
 
   it("should set up new remote method", () => {
-    index(Model, {});
+    Search(Model, {});
 
     sandbox.assert.calledOnce(Model.remoteMethod);
     sandbox.assert.calledWith(
@@ -53,13 +53,13 @@ describe("index", () => {
   });
 
   it("should create member function setDefaultFilter", () => {
-    index(Model, {});
+    Search(Model, {});
 
     Model.setDefaultFilter.should.be.a.Function();
   });
 
   describe("setDefaultFilter", () => {
-    beforeEach(() => index(Model, {}));
+    beforeEach(() => Search(Model, {}));
 
     it("should create filter if non exists", () => {
       const filter = Model.setDefaultFilter();
@@ -83,13 +83,13 @@ describe("index", () => {
     });
 
     it("should override default mixin limit", () => {
-      index(Model, { limit: 20 });
+      Search(Model, { limit: 20 });
       const filter = Model.setDefaultFilter();
       filter.limit.should.equal(20);
     });
 
     it("should override default mixin offset", () => {
-      index(Model, { offset: 10 });
+      Search(Model, { offset: 10 });
       const filter = Model.setDefaultFilter();
       filter.offset.should.equal(10);
     });
@@ -98,7 +98,7 @@ describe("index", () => {
   describe("search", () => {
     let filterSpy;
     beforeEach(() => {
-      index(Model, {});
+      Search(Model, {});
       filterSpy = sandbox.spy(Model, "setDefaultFilter");
     });
 
