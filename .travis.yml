@@ -11,5 +11,5 @@ jobs:
     - stage: "Lint and Test"
       script: npm run lint
       name: "Linting"
-    - script: npm test
+    - script: npm run test:travis
       name: "Test"

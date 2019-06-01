@@ -4,7 +4,8 @@
   "description": "A more search friendly search endpoint for loopback",
   "main": "index.js",
   "scripts": {
-    "test": "nyc -r lcov -r text -r html mocha -r should *.spec.js",
+    "test:travis": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "test": "mocha -r should *.spec.js",
     "lint": "eslint .",
     "format": "prettier-eslint --write '**/*.js'"
   },
@@ -37,5 +38,8 @@
     "should": "^13.2.3",
     "should-sinon": "0.0.6",
     "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "coveralls": "^3.0.3"
   }
 }
