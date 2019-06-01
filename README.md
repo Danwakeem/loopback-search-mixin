@@ -1,4 +1,8 @@
 # Loopback Search Endpoint
+
+[![Build Status](https://travis-ci.com/Danwakeem/loopback-search-mixin.svg?branch=master)](https://travis-ci.com/Danwakeem/loopback-search-mixin)
+[![Coverage Status](https://coveralls.io/repos/github/Danwakeem/loopback-search-mixin/badge.svg?branch=master)](https://coveralls.io/github/Danwakeem/loopback-search-mixin?branch=master)
+
 This loopback middleware replaces the default `GET /` endpoint with something that is a little more search friendly.
 
 ## Useage
